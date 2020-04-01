@@ -1,0 +1,6 @@
+li:hover {
+    cursor: pointer;
+}
+h1.hidden {
+    display: none;
+  }
