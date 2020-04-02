@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-const LikeBtn = ({ type, counter })=>{
-    const[myCount,setMyCount] = useState(counter);
+import React from 'react';
+import { doDislike, doLike } from "./actions/like-actions";
+import { useDispatch } from 'react-redux';
+
+const LikeBtn = ({ type, counter, id })=>{
+    const dispatch = useDispatch()
     return(
         <button 
             onClick = {handleClick} 
             className="btn btn-default"
             title={ type === "like" ? "+1" : "-1"}>
-        {myCount}
+        {counter}
         <i className={type === "like"? "glyphicon glyphicon-thumbs-up" : "glyphicon glyphicon-thumbs-down"} />
         </button>
     );
 
     function handleClick(){
-        setMyCount (preValue => preValue +1);
+        type === "like" ? dispatch(doLike(id)) : dispatch(doDislike(id));
     }
 }
 

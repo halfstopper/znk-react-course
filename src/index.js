@@ -1,11 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import rules from './data.json'
 import RuleList from './RuleList';
 import 'bootstrap/dist/css/bootstrap.css';
-//import App from './App'
+import { Provider } from 'react-redux';
+import store from './store/app-store';
+
 
 const domElement = document.getElementById('root');
-ReactDOM.render(<RuleList rules = {rules}/>, domElement);
+
+ReactDOM.render(
+    <Provider store={store}>
+        <RuleList />
+    </Provider>
+    ,domElement);
+
+//From Day 1
+//import rules from './data.json'
+//import rulesApp from './reducers/rules-reducer';
+//ReactDOM.render(<RuleList rules = {rules}/>, domElement);
 //ReactDOM.render(<App/>, domElement);

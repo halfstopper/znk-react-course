@@ -7,7 +7,6 @@ import rules from "../data.json";
 describe("Rule", () => {
     let rule;
     let wrapper;
-    let container;
   
     beforeEach(() => {
       rule = rules[0];

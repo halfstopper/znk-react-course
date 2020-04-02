@@ -23,8 +23,8 @@ const Rule = ({rule})=>{
                     </button>
                 </div>
                 <div className="btn-group btn-group-xs pull-right">
-                    <LikeBtn type="like" counter={rule.likes} />
-                    <LikeBtn type="dislike" counter={rule.dislikes} />
+                    <LikeBtn type="like" counter={rule.likes} id={rule.id} />
+                    <LikeBtn type="dislike" counter={rule.dislikes} id={rule.id}/>
                 </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@ Rule.propTypes = {
     rule : PropTypes.shape({
         id:PropTypes.number.isRequired,
         title:PropTypes.string.isRequired,
-        description:PropTypes.string.isRequired,
+        description:PropTypes.string,
         likes:PropTypes.number.isRequired,
         dislikes:PropTypes.number.isRequired,
         tags:PropTypes.arrayOf(PropTypes.string)

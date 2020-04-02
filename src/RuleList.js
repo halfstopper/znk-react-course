@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import Rule from './Rule';
+import { connect } from 'react-redux';
+import { loadRules } from "./actions/rules-actions";
 
-//Using destructing for props
-const RuleList = ({rules}) =>{
+
+const RuleList = ({ rules, fetchRules }) => {
+    useEffect(() => {
+        fetchRules();
+    }, []);
     return(  
         <div>
             {rules.map((item,idx) => <Rule key={idx} rule={item} />)}
         </div>
     );
-}
-export default RuleList;
+  };
+
+  const mapStateToProps = ({ rules }) => ({
+    rules
+  });
+
+  const mapDispatchToProps = (dispatch)=>{
+    return {
+        fetchRules:()=>dispatch(loadRules())
+
+    }
+  };
+
+  export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(RuleList);
