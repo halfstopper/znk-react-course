@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { doDislike, doLike } from "./actions/like-actions";
+import { doLike } from "./actions/like-actions";
+import { doDislike} from "./actions/dislike-actions";
 import { useDispatch } from 'react-redux';
 
 const LikeBtn = ({ type, counter, id })=>{

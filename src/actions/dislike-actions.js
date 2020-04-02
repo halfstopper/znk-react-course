@@ -1,12 +1,12 @@
 // Action creator
 import axios from 'axios';
-export const LIKES_LOADED = "LIKES_LOADED";
-export const doLike = (id) => {
+export const DISLIKES_LOADED = "DISLIKES_LOADED";
+export const doDislike = (id) => {
   return async dispatch => {
     try {
-      const response = await axios.post("/rest/rules/"+id+"/likes");
+      const response = await axios.post("/rest/rules/"+id+"/dislikes");
       dispatch({
-        type: LIKES_LOADED,
+        type: DISLIKES_LOADED ,
         payload: id
       });
     } catch (error) {
