@@ -4,14 +4,18 @@ import './index.css';
 import RuleList from './RuleList';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Provider } from 'react-redux';
+import { BrowserRouter, Route } from "react-router-dom";
 import store from './store/app-store';
+import Layout from "./Layout";
 
 
 const domElement = document.getElementById('root');
 
 ReactDOM.render(
     <Provider store={store}>
-        <RuleList />
+        <BrowserRouter>
+            <Route path="/" component={Layout} />
+        </BrowserRouter>
     </Provider>
     ,domElement);
 

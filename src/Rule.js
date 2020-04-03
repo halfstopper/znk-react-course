@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Rule.css';
 import LikeBtn from './LIkeBtn';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 const Rule = ({rule})=>{
     const [folded, setFolded] = useState(!rule.description);
@@ -19,7 +20,7 @@ const Rule = ({rule})=>{
                 {rule.tags.map(item =><span key = {item} className="badge"> {item} </span>)}
                 <div className="btn-group btn-group-xs pull-right">
                     <button className="btn btn-primary" title="Update">
-                    <i className="glyphicon glyphicon-pencil" />
+                    <Link to={`/edit/${rule.id}`}><i className="glyphicon glyphicon-pencil"/></Link>
                     </button>
                 </div>
                 <div className="btn-group btn-group-xs pull-right">
