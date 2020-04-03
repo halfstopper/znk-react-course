@@ -48,4 +48,24 @@ during building the image
 
 next.js
 reach-router but it does not support hash
-zeit.co
+zeit.co (to explore)
+
+Formik to do form
+Yup to validate
+
+
+## Performance
+
+ref to access the real DOM
+
+Using browser dev-tools
+useMemo(Functional Component) vs shouldCOmponentUpdate(class Component)
+
+immutable library 
+Reux: useSelect, reSelect
+render Markup
+
+tweak css instead of using javascript
+
+Email:
+Dhrubajit.chowdhury@zenika.com

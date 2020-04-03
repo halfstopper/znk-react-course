@@ -1,5 +1,5 @@
 // Action Reducer
-import { RULES_LOADED } from "../actions/rules-actions";
+import { RULES_LOADED,RULE_ADD,RULE_UPDATE} from "../actions/rules-actions";
 import { LIKES_LOADED } from "../actions/like-actions";
 import { DISLIKES_LOADED } from "../actions/dislike-actions";
 
@@ -19,7 +19,18 @@ const rulesReducer = (state = [], action) => {
         const newRules = [...state]
         newRules[ruleIndex].dislikes += 1 
         return newRules;
+    }
+
+    case RULE_ADD: {   
+        const newRules = [...state,action.payload]
+        return newRules;
+    }
+
+    case RULE_UPDATE: {
+      const newRules = [...state,action.payload]
+      return newRules;
       }
+
     default:
       return state;
   }

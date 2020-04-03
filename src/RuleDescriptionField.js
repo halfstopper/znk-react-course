@@ -1,9 +1,9 @@
 import React from "react";
-const RuleDescriptionField = ({rule}) => {
+const RuleDescriptionField = ({field}) => {
     return (
         <div className="form-group">
             <label htmlFor="rule-desc">Description</label>
-            <textarea className="form-control" id="rule-desc" placeholder = "Description" defaultValue={rule && rule.description} />
+            <textarea {...field} className="form-control" id="rule-desc" placeholder = "Description" defaultValue={field.value} />
         </div>
     );
 };

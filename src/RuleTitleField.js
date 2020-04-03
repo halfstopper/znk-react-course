@@ -1,9 +1,9 @@
 import React from "react";
-const RuleTitleField = ({rule}) => {
+const RuleTitleField = ({field}) => {
     return (
         <div className="form-group">
             <label htmlFor="rule-title">Title</label>
-            <input type="text" className="form-control" id="rule-title" placeholder = "Title" defaultValue={rule && rule.title} />
+            <input {...field} className="form-control" id="rule-title" placeholder = "Title" />
         </div>
     );
 };
