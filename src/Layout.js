@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
+import { loadRules } from "./actions/rules-actions";
+import { connect } from 'react-redux';
 import Header from "./Header";
 import RuleList from "./RuleList";
 import RuleForm from "./RuleForm";
 
-const Layout = () => {
+const Layout = ({ rules, fetchRules }) => {
+    useEffect(() => {
+        fetchRules();
+    }, []);
   return (
     <div>
       <Header />
@@ -20,4 +25,17 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+const mapStateToProps = ({ rules }) => ({
+    rules
+  });
+
+  const mapDispatchToProps = (dispatch)=>{
+    return {
+        fetchRules:()=>dispatch(loadRules())
+    }
+  };
+
+  export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Layout);
